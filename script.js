@@ -13,8 +13,10 @@ let gameChoice = ['Rock', 'Paper', 'Scissors'];
 
 function getComputerChoice() {
   let computerChoice = Math.floor(Math.random() * ((3 - 1) + 1));
-  computerChoice = gameChoice.at(computerChoice);
-  console.log(computerChoice)
+  return computerChoice = gameChoice.at(computerChoice);
 }
 
-console.log(getComputerChoice())
+console.log('Computer : ' + getComputerChoice())
+
+
+
