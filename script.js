@@ -21,7 +21,10 @@
    if the value is userScore > computerScore, say you win
 */
 
-game()
+let userScore;
+let computerScore;
+
+game();
 
 function game() {
   for (let i = 0; i < 5; i++) {
@@ -48,10 +51,13 @@ function game() {
         )
       ) {
         alert("You have a typo or did not write anything");
+        game();
       } else {
         return (userChoice = fixedChoice);
       }
     }
+
+    playRound(computerChoice, userChoice);
 
     function playRound(computerSelection, userSelection) {
       if (
@@ -59,20 +65,24 @@ function game() {
         (userSelection === "Scissors" && computerSelection === "Rock") ||
         (userSelection === "Paper" && computerSelection === "Scissors")
       ) {
-        return `Computer : ${computerChoice} \nYou : ${userChoice} \nYou lose`;
+        computerScore += 3;
       } else if (
         (userSelection === "Scissors" && computerSelection === "Paper") ||
         (userSelection === "Rock" && computerSelection === "Scissors") ||
         (userSelection === "Paper" && computerSelection === "Rock")
       ) {
-        return `Computer : ${computerChoice} \nYou : ${userChoice} \nYou win`;
+        userScore += 3;
       } else {
-        return `Computer : ${computerChoice} \nYou : ${userChoice} \nDraw`;
+        computerScore += 1;
+        userScore += 1;
       }
     }
-
-    let result = playRound(computerChoice, userChoice);
-
-    alert(result);
+  }
+  if (userScore > computerChoice) {
+    alert('you win')
+  } else if (userScore === computerChoice) {
+    alert('draw')
+  } else {
+    alert('lose')
   }
 }
