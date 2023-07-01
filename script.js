@@ -57,7 +57,7 @@ function game() {
       }
     }
 
-    playRound(computerChoice, userChoice);
+    alert(playRound(computerChoice, userChoice));
 
     function playRound(computerSelection, userSelection) {
       if (
@@ -66,23 +66,32 @@ function game() {
         (userSelection === "Paper" && computerSelection === "Scissors")
       ) {
         computerScore += 3;
+        return `You lose, ${computerChoice} beats ${userChoice}`;
       } else if (
         (userSelection === "Scissors" && computerSelection === "Paper") ||
         (userSelection === "Rock" && computerSelection === "Scissors") ||
         (userSelection === "Paper" && computerSelection === "Rock")
       ) {
         userScore += 3;
+        return `You win, ${userChoice} beats ${computerChoice}`;
       } else {
         computerScore += 1;
         userScore += 1;
+        return `it's a draw`;
       }
     }
   }
   if (userScore > computerScore) {
-    alert(`Computer : ${computerScore} \nYou : ${userScore} \nYou win`)
+    alert(
+      `Computer : ${computerScore} point \nYou : ${userScore} point \nYou win`
+    );
   } else if (userScore === computerScore) {
-    alert(`Computer : ${computerScore} \nYou : ${userScore} \nIt's a draw`)
+    alert(
+      `Computer : ${computerScore} point \nYou : ${userScore} point \nIt's a draw`
+    );
   } else {
-    alert(`Computer : ${computerScore} \nYou : ${userScore} \nYou lose`)
+    alert(
+      `Computer : ${computerScore} point \nYou : ${userScore} point \nYou lose`
+    );
   }
 }
