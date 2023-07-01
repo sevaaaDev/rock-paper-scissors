@@ -78,9 +78,9 @@ function game() {
       }
     }
   }
-  if (userScore > computerChoice) {
+  if (userScore > computerScore) {
     alert('you win')
-  } else if (userScore === computerChoice) {
+  } else if (userScore === computerScore) {
     alert('draw')
   } else {
     alert('lose')
