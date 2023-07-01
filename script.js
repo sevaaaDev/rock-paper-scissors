@@ -51,10 +51,18 @@ function playRound(computerSelection, userSelection) {
     (userSelection === "Scissors" && computerSelection === "Rock") ||
     (userSelection === "Paper" && computerSelection === "Scissors")
   ) {
-    return alert(
-      `Computer : ${computerChoice} \nYou : ${userChoice} \nYou lose`
-    );
+    return `Computer : ${computerChoice} \nYou : ${userChoice} \nYou lose`;
+  } else if (
+    (userSelection === "Scissors" && computerSelection === "Paper") ||
+    (userSelection === "Rock" && computerSelection === "Scissors") ||
+    (userSelection === "Paper" && computerSelection === "Rock")
+  ) {
+    return `Computer : ${computerChoice} \nYou : ${userChoice} \nYou win`;
+  } else {
+    return `Computer : ${computerChoice} \nYou : ${userChoice} \nDraw`;
   }
 }
 
-playRound(computerChoice, userChoice);
+let result = playRound(computerChoice, userChoice);
+
+alert(result);
