@@ -1,26 +1,3 @@
-/* Make a rock paper scissors game
-   the opponent is computer
-   make an array of the thing(RPS)
-   get random num between 0 to 2
-   index the array using the random num
-   assign that value to computer choice
-*/
-/*
-   make a prompt that let user input value
-   check for typo or case sensitive
-   if there is a typo, alert user
-   if no typo, assign the value to userChoice
-*/
-/*
-   make all possibility of choice
-   compare it
-   say "you win" if user won or "you lose" if user lose
-*/
-/* change playRound return to 3 if win, 1 if draw, 0 if lose
-   calc the retur value
-   if the value is userScore > computerScore, say you win
-*/
-
 let userScore = 0;
 let computerScore = 0;
 
