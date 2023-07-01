@@ -65,14 +65,14 @@ function game() {
         (userSelection === "Scissors" && computerSelection === "Rock") ||
         (userSelection === "Paper" && computerSelection === "Scissors")
       ) {
-        computerScore += 3;
+        computerScore += 1;
         return `You lose, ${computerChoice} beats ${userChoice}`;
       } else if (
         (userSelection === "Scissors" && computerSelection === "Paper") ||
         (userSelection === "Rock" && computerSelection === "Scissors") ||
         (userSelection === "Paper" && computerSelection === "Rock")
       ) {
-        userScore += 3;
+        userScore += 1;
         return `You win, ${userChoice} beats ${computerChoice}`;
       } else {
         computerScore += 1;
