@@ -35,7 +35,6 @@ function game() {
     let userChoice = getUserChoice();
 
     alert(playRound(computerChoice, userChoice));
-    console.log(playRound(computerChoice, userChoice));
 
     function playRound(computerSelection, userSelection) {
       if (
@@ -43,18 +42,16 @@ function game() {
         (userSelection === "Scissors" && computerSelection === "Rock") ||
         (userSelection === "Paper" && computerSelection === "Scissors")
       ) {
-        computerScore += 1;
+        computerScore++;
         return `You lose, ${computerChoice} beats ${userChoice}`;
       } else if (
         (userSelection === "Scissors" && computerSelection === "Paper") ||
         (userSelection === "Rock" && computerSelection === "Scissors") ||
         (userSelection === "Paper" && computerSelection === "Rock")
       ) {
-        userScore += 1;
+        userScore++;
         return `You win, ${userChoice} beats ${computerChoice}`;
       } else {
-        computerScore += 1;
-        userScore += 1;
         return `it's a draw`;
       }
     }
