@@ -36,13 +36,11 @@ function game() {
     }
 
     let computerChoice = getComputerChoice();
-    let userChoice = prompt("Rock, Paper, Scissors");
 
-    checkUserTypo(userChoice);
-
-    function checkUserTypo() {
+    function getUserChoice() {
+      let input = prompt("Rock, Paper, Scissors");
       let fixedChoice =
-        userChoice.charAt(0).toUpperCase() + userChoice.slice(1).toLowerCase();
+        input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
       if (
         !(
           fixedChoice === "Paper" ||
@@ -51,12 +49,14 @@ function game() {
         )
       ) {
         alert("You have a typo or did not write anything");
-        game();
+        getUserChoice();
       } else {
-        return (userChoice = fixedChoice);
+        return (input = fixedChoice);
       }
     }
 
+    let userChoice = getUserChoice();
+    console.log(userChoice);
     alert(playRound(computerChoice, userChoice));
 
     function playRound(computerSelection, userSelection) {
