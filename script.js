@@ -16,53 +16,63 @@
    compare it
    say "you win" if user won or "you lose" if user lose
 */
+/* change playRound return to 3 if win, 1 if draw, 0 if lose
+   calc the retur value
+   if the value is userScore > computerScore, say you win
+*/
 
-let gameChoice = ["Rock", "Paper", "Scissors"];
+game()
 
-function getComputerChoice() {
-  let computerChoice = Math.floor(Math.random() * (3 - 1 + 1));
-  return (computerChoice = gameChoice.at(computerChoice));
-}
+function game() {
+  for (let i = 0; i < 5; i++) {
+    let gameChoice = ["Rock", "Paper", "Scissors"];
 
-let computerChoice = getComputerChoice();
-let userChoice = prompt("Rock, Paper, Scissors");
+    function getComputerChoice() {
+      let computerChoice = Math.floor(Math.random() * (3 - 1 + 1));
+      return (computerChoice = gameChoice.at(computerChoice));
+    }
 
-checkUserTypo(userChoice);
+    let computerChoice = getComputerChoice();
+    let userChoice = prompt("Rock, Paper, Scissors");
 
-function checkUserTypo() {
-  let fixedChoice =
-    userChoice.charAt(0).toUpperCase() + userChoice.slice(1).toLowerCase();
-  if (
-    !(
-      fixedChoice === "Paper" ||
-      fixedChoice === "Rock" ||
-      fixedChoice === "Scissors"
-    )
-  ) {
-    alert("You have a typo or did not write anything");
-  } else {
-    return (userChoice = fixedChoice);
+    checkUserTypo(userChoice);
+
+    function checkUserTypo() {
+      let fixedChoice =
+        userChoice.charAt(0).toUpperCase() + userChoice.slice(1).toLowerCase();
+      if (
+        !(
+          fixedChoice === "Paper" ||
+          fixedChoice === "Rock" ||
+          fixedChoice === "Scissors"
+        )
+      ) {
+        alert("You have a typo or did not write anything");
+      } else {
+        return (userChoice = fixedChoice);
+      }
+    }
+
+    function playRound(computerSelection, userSelection) {
+      if (
+        (userSelection === "Rock" && computerSelection === "Paper") ||
+        (userSelection === "Scissors" && computerSelection === "Rock") ||
+        (userSelection === "Paper" && computerSelection === "Scissors")
+      ) {
+        return `Computer : ${computerChoice} \nYou : ${userChoice} \nYou lose`;
+      } else if (
+        (userSelection === "Scissors" && computerSelection === "Paper") ||
+        (userSelection === "Rock" && computerSelection === "Scissors") ||
+        (userSelection === "Paper" && computerSelection === "Rock")
+      ) {
+        return `Computer : ${computerChoice} \nYou : ${userChoice} \nYou win`;
+      } else {
+        return `Computer : ${computerChoice} \nYou : ${userChoice} \nDraw`;
+      }
+    }
+
+    let result = playRound(computerChoice, userChoice);
+
+    alert(result);
   }
 }
-
-function playRound(computerSelection, userSelection) {
-  if (
-    (userSelection === "Rock" && computerSelection === "Paper") ||
-    (userSelection === "Scissors" && computerSelection === "Rock") ||
-    (userSelection === "Paper" && computerSelection === "Scissors")
-  ) {
-    return `Computer : ${computerChoice} \nYou : ${userChoice} \nYou lose`;
-  } else if (
-    (userSelection === "Scissors" && computerSelection === "Paper") ||
-    (userSelection === "Rock" && computerSelection === "Scissors") ||
-    (userSelection === "Paper" && computerSelection === "Rock")
-  ) {
-    return `Computer : ${computerChoice} \nYou : ${userChoice} \nYou win`;
-  } else {
-    return `Computer : ${computerChoice} \nYou : ${userChoice} \nDrawgit`;
-  }
-}
-
-let result = playRound(computerChoice, userChoice);
-
-alert(result);
