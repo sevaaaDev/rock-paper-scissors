@@ -56,8 +56,9 @@ function game() {
     }
 
     let userChoice = getUserChoice();
-    console.log(userChoice);
+
     alert(playRound(computerChoice, userChoice));
+    console.log(playRound(computerChoice, userChoice));
 
     function playRound(computerSelection, userSelection) {
       if (
