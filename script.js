@@ -59,7 +59,7 @@ function playRound(computerSelection, userSelection) {
   ) {
     return `Computer : ${computerChoice} \nYou : ${userChoice} \nYou win`;
   } else {
-    return `Computer : ${computerChoice} \nYou : ${userChoice} \nDraw`;
+    return `Computer : ${computerChoice} \nYou : ${userChoice} \nDrawgit`;
   }
 }
 
