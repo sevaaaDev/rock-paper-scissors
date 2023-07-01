@@ -21,8 +21,8 @@
    if the value is userScore > computerScore, say you win
 */
 
-let userScore;
-let computerScore;
+let userScore = 0;
+let computerScore = 0;
 
 game();
 
@@ -79,10 +79,10 @@ function game() {
     }
   }
   if (userScore > computerScore) {
-    alert('you win')
+    alert(`Computer : ${computerScore} \nYou : ${userScore} \nYou win`)
   } else if (userScore === computerScore) {
-    alert('draw')
+    alert(`Computer : ${computerScore} \nYou : ${userScore} \nIt's a draw`)
   } else {
-    alert('lose')
+    alert(`Computer : ${computerScore} \nYou : ${userScore} \nYou lose`)
   }
 }
