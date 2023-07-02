@@ -5,15 +5,10 @@ game();
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    let gameChoice = ["Rock", "Paper", "Scissors"];
-
     function getComputerChoice() {
       let computerChoice = Math.floor(Math.random() * (3 - 1 + 1));
       return (computerChoice = gameChoice.at(computerChoice));
     }
-
-    let computerChoice = getComputerChoice();
-
     function getUserChoice() {
       let input = prompt("Rock, Paper, Scissors");
       let fixedChoice =
@@ -23,25 +18,20 @@ function game() {
           fixedChoice === "Paper" ||
           fixedChoice === "Rock" ||
           fixedChoice === "Scissors"
-        )
-      ) {
-        alert("You have a typo or did not write anything");
-        getUserChoice();
-      } else {
-        return (input = fixedChoice);
-      }
-    }
-
-    let userChoice = getUserChoice();
-
-    alert(playRound(computerChoice, userChoice));
-
+          )
+          ) {
+            alert("You have a typo or did not write anything");
+            getUserChoice();
+          } else {
+            return (input = fixedChoice);
+          }
+        }   
     function playRound(computerSelection, userSelection) {
       if (
         (userSelection === "Rock" && computerSelection === "Paper") ||
         (userSelection === "Scissors" && computerSelection === "Rock") ||
         (userSelection === "Paper" && computerSelection === "Scissors")
-      ) {
+        ) {
         computerScore++;
         return `You lose, ${computerChoice} beats ${userChoice}`;
       } else if (
@@ -55,6 +45,12 @@ function game() {
         return `it's a draw`;
       }
     }
+
+    let gameChoice = ["Rock", "Paper", "Scissors"];
+    let computerChoice = getComputerChoice();
+    let userChoice = getUserChoice();
+    alert(playRound(computerChoice, userChoice));
+
   }
   if (userScore > computerScore) {
     alert(
