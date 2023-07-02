@@ -23,7 +23,7 @@ function game() {
             alert("You have a typo or did not write anything");
             getUserChoice();
           } else {
-            return (input = fixedChoice);
+            return fixedChoice;
           }
         }   
     function playRound(computerSelection, userSelection) {
