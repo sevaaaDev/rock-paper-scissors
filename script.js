@@ -6,8 +6,8 @@ game();
 function game() {
   for (let i = 0; i < 5; i++) {
     function getComputerChoice() {
-      let computerChoice = Math.floor(Math.random() * (3 - 1 + 1));
-      return (computerChoice = gameChoice.at(computerChoice));
+      let choice = Math.floor(Math.random() * (3 - 1 + 1));
+      return gameChoice.at(choice);
     }
     function getUserChoice() {
       let input = prompt("Rock, Paper, Scissors");
