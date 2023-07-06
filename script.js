@@ -1,28 +1,17 @@
 let userScore = 0;
 let computerScore = 0;
 
+
+
+
 function getComputerChoice() {
   let choice = Math.floor(Math.random() * 2.4);
   return gameChoice.at(choice);
 }
 
-function getUserChoice() {
-  let input = prompt("Rock, Paper, Scissors");
-  let fixedChoice =
-    input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
-  if (
-    !(
-      fixedChoice === "Paper" ||
-      fixedChoice === "Rock" ||
-      fixedChoice === "Scissors"
-    )
-  ) {
-    alert("You have a typo or did not write anything");
-    getUserChoice();
-  } else {
-    return fixedChoice;
-  }
-}
+
+
+
 
 function playRound(computerSelection, userSelection) {
   if (
@@ -46,7 +35,7 @@ function playRound(computerSelection, userSelection) {
 
 let gameChoice = ["Rock", "Paper", "Scissors"];
 let computerChoice = getComputerChoice();
-let userChoice = getUserChoice();
+let userChoice 
 alert(playRound(computerChoice, userChoice));
 
 if (userScore > computerScore) {
