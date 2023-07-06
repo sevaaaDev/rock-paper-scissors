@@ -1,17 +1,18 @@
 let userScore = 0;
 let computerScore = 0;
 
+document.addEventListener("click", getUserChoice);
 
-
+function getUserChoice(e) {
+  if (e.target.tagName == "BUTTON") {
+    userChoice = e.target.className
+  }
+}
 
 function getComputerChoice() {
   let choice = Math.floor(Math.random() * 2.4);
   return gameChoice.at(choice);
 }
-
-
-
-
 
 function playRound(computerSelection, userSelection) {
   if (
@@ -35,8 +36,9 @@ function playRound(computerSelection, userSelection) {
 
 let gameChoice = ["Rock", "Paper", "Scissors"];
 let computerChoice = getComputerChoice();
-let userChoice 
-alert(playRound(computerChoice, userChoice));
+let userChoice;
+
+// alert(playRound(computerChoice, userChoice));
 
 if (userScore > computerScore) {
   alert(
