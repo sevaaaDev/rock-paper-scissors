@@ -2,7 +2,7 @@ let userScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-  let choice = Math.floor(Math.random() * (3 - 1 + 1));
+  let choice = Math.floor(Math.random() * 2.4);
   return gameChoice.at(choice);
 }
 
