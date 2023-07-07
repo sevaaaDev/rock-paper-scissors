@@ -21,16 +21,13 @@ function game() {
   function showInfo() {
     if (result == 'lose' ) {
       userBoard.textContent = `You : ${userScore}`;
-      compBoard.textContent = `Computer : ${computerScore}`;
-      info.textContent = `You lose, ${computerChoice} beats ${userChoice}`;
+      compBoard.textContent = `Computer : ${computerScore}`;;
     } else if (result == 'win') {
       userBoard.textContent = `You : ${userScore}`;
-      compBoard.textContent = `Computer : ${computerScore}`;
-      info.textContent = `You win, ${userChoice} beats ${computerChoice}`;
+      compBoard.textContent = `Computer : ${computerScore}`;;
     } else if (result == 'draw') {
       userBoard.textContent = `You : ${userScore}`;
       compBoard.textContent = `Computer : ${computerScore}`;
-      info.textContent = `it's a draw`;
     }
   }
 
@@ -44,7 +41,6 @@ function game() {
       result = 'lose'
       showInfo()
       computerChoice = getComputerChoice();
-      console.log(`Computer : ${computerChoice}`);
     } else if (
       (userSelection === "Scissors" && computerSelection === "Paper") ||
       (userSelection === "Rock" && computerSelection === "Scissors") ||
@@ -54,12 +50,10 @@ function game() {
       result = 'win'
       showInfo()
       computerChoice = getComputerChoice();
-      console.log(`Computer : ${computerChoice}`);
     } else {
       result = 'draw'
       showInfo()
       computerChoice = getComputerChoice();
-      console.log(`Computer : ${computerChoice}`);
     }
   }
   function getComputerChoice() {
@@ -70,19 +64,4 @@ function game() {
   let gameChoice = ["Rock", "Paper", "Scissors"];
   let computerChoice = getComputerChoice();
   let userChoice = getUserChoice();
-  console.log(`Computer : ${computerChoice}`);
 }
-
-// if (userScore > computerScore) {
-//   console.log(
-//     `Computer : ${computerScore} point \nYou : ${userScore} point \nYou win`
-//   );
-// } else if (userScore === computerScore) {
-//   console.log(
-//     `Computer : ${computerScore} point \nYou : ${userScore} point \nIt's a draw`
-//   );
-// } else {
-//   console.log(
-//     `Computer : ${computerScore} point \nYou : ${userScore} point \nYou lose`
-//   );
-// }
