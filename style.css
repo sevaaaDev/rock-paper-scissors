@@ -4,17 +4,55 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'DotGothic16', sans-serif;
+  background-color: #ddd;
+}
+
 img {
   width: 100%;
-  grid-row: 2 / 4;
+  grid-row: 4 / 6;
   grid-column: span 2;
+}
+
+img:hover {
+  border: 5px solid grey;
+}
+
+img:active {
+  scale: 0.9;
 }
 
 #container {
   margin: 0 auto;
   width: 95%;
-  max-width: 80ch;
+  max-width: 60ch;
   display: grid;
   grid-template-columns: repeat(6, minmax(100px,1fr));
   gap: 1rem;
+}
+
+.userScore {
+  grid-column: 2/4;
+  text-align: center;
+  font-size: 6rem;
+}
+
+.compScore {
+  grid-column: 4/6;
+  grid-row: 2/3;
+  text-align: center;
+  font-size: 6rem;
+}
+
+.user {
+  grid-column: 1/4;
+  text-align: center;
+  font-size: 6rem;
+}
+
+.computer {
+  grid-column: 4/7;
+  text-align: center;
+  font-size: 6rem;
 }
