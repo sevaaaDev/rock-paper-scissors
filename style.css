@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  grid-row: 2 / 4;
+  grid-column: span 2;
+}
+
+#container {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 80ch;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(100px,1fr));
+  gap: 1rem;
+}
