@@ -6,27 +6,33 @@ function playGame() {
   let result;
   const userBoard = document.querySelector(".userScore");
   const compBoard = document.querySelector(".compScore");
-  const btn = document.querySelectorAll("button");
-
+  const selector = document.querySelectorAll("img");
+  
+  for (let i = 0; i < selector.length; i++) {
+    selector[i].addEventListener('click', () => {
+      userChoice = selector[i].className
+      playRound()
+    })
+  }
 
   function showInfo() {
     if (result == "lose") {
-      userBoard.textContent = `You : ${userScore}`;
-      compBoard.textContent = `Computer : ${computerScore}`;
+      userBoard.textContent = userScore;
+      compBoard.textContent = computerScore;
     } else if (result == "win") {
-      userBoard.textContent = `You : ${userScore}`;
-      compBoard.textContent = `Computer : ${computerScore}`;
+      userBoard.textContent = userScore;
+      compBoard.textContent = computerScore;
     } else if (result == "draw") {
-      userBoard.textContent = `You : ${userScore}`;
-      compBoard.textContent = `Computer : ${computerScore}`;
+      userBoard.textContent = userScore;
+      compBoard.textContent = computerScore;
     }
   }
 
-  function playRound(computerSelection, userSelection) {
+  function playRound() {
     if (
-      (userSelection === "Rock" && computerSelection === "Paper") ||
-      (userSelection === "Scissors" && computerSelection === "Rock") ||
-      (userSelection === "Paper" && computerSelection === "Scissors")
+      (userChoice === "Rock" && computerChoice === "Paper") ||
+      (userChoice === "Scissors" && computerChoice === "Rock") ||
+      (userChoice === "Paper" && computerChoice === "Scissors")
     ) {
       computerScore++;
       result = "lose";
@@ -34,9 +40,9 @@ function playGame() {
       checkResult();
       computerChoice = getComputerChoice();
     } else if (
-      (userSelection === "Scissors" && computerSelection === "Paper") ||
-      (userSelection === "Rock" && computerSelection === "Scissors") ||
-      (userSelection === "Paper" && computerSelection === "Rock")
+      (userChoice === "Scissors" && computerChoice === "Paper") ||
+      (userChoice === "Rock" && computerChoice === "Scissors") ||
+      (userChoice === "Paper" && computerChoice === "Rock")
     ) {
       userScore++;
       result = "win";
@@ -57,13 +63,15 @@ function playGame() {
 
   function checkResult() {
     if (userScore == 5 || computerScore == 5) {
-      userBoard.style.display = "none";
-      compBoard.style.display = "none";
-      for (let i = 0; i < btn.length; i++) {
-        btn[i].style.display = "none";
+      for (let i = 0; i < selector.length; i++) {
+        selector[i].style.display = "none";
       }
       const message = document.createElement("div");
       container.append(message);
+      message.style.textAlign = 'center'
+      message.style.fontSize = '3rem'
+      message.style.gridRow = '4/6'
+      message.style.gridColumn = '3/5'
       if (userScore < computerScore) {
         message.innerText = "You lose";
       } else {
@@ -73,5 +81,5 @@ function playGame() {
   }
   let gameChoice = ["Rock", "Paper", "Scissors"];
   let computerChoice = getComputerChoice();
-  let userChoice = getUserChoice();
+  let userChoice;
 }
