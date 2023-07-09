@@ -1,21 +1,13 @@
-let userScore = 0;
-let computerScore = 0;
-let result;
-const userBoard = document.querySelector(".userScore");
-const compBoard = document.querySelector(".compScore");
-const btn = document.querySelectorAll("button");
-
 playGame();
 
 function playGame() {
-  function getUserChoice() {
-    document.addEventListener("click", assignUserChoice);
-    function assignUserChoice(e) {
-      if (e.target.tagName !== "BUTTON") return;
-      userChoice = e.target.className;
-      playRound(computerChoice, userChoice);
-    }
-  }
+  let userScore = 0;
+  let computerScore = 0;
+  let result;
+  const userBoard = document.querySelector(".userScore");
+  const compBoard = document.querySelector(".compScore");
+  const btn = document.querySelectorAll("button");
+
 
   function showInfo() {
     if (result == "lose") {
