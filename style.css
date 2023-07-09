@@ -5,7 +5,7 @@
 }
 
 body {
-  /* font-family: 'DotGothic16', sans-serif; */
+  font-family: 'DotGothic16', sans-serif;
   background-color: #ddd;
 }
 
@@ -30,6 +30,7 @@ img:active {
   display: grid;
   grid-template-columns: repeat(6, minmax(50px,1fr));
   justify-items: center;
+  row-gap: 2rem;
 }
 
 .userScore {
