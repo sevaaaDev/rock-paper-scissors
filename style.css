@@ -25,7 +25,7 @@ img:active {
 
 #container {
   margin: 0 auto;
-  width: 95%;
+  width: 85%;
   max-width: 60ch;
   display: grid;
   grid-template-columns: repeat(6, minmax(100px,1fr));
