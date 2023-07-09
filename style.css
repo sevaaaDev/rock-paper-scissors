@@ -25,34 +25,34 @@ img:active {
 
 #container {
   margin: 0 auto;
-  width: 85%;
+  width: 100%;
   max-width: 800px;
   display: grid;
-  grid-template-columns: repeat(6, minmax(100px,1fr));
+  grid-template-columns: repeat(6, minmax(50px,1fr));
   justify-items: center;
 }
 
 .userScore {
   grid-column: 2/4;
   text-align: center;
-  font-size: 6rem;
+  font-size: clamp(3rem, 10vw, 6rem);
 }
 
 .compScore {
   grid-column: 4/6;
   grid-row: 2/3;
   text-align: center;
-  font-size: 6rem;
+  font-size: clamp(3rem, 10vw, 6rem);
 }
 
 .user {
   grid-column: 1/4;
   text-align: center;
-  font-size: 6rem;
+  font-size: clamp(3rem, 10vw, 6rem);
 }
 
 .computer {
   grid-column: 4/7;
   text-align: center;
-  font-size: 6rem;
+  font-size: clamp(3rem, 10vw, 6rem);
 }
