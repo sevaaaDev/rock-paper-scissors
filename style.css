@@ -15,6 +15,7 @@ body {
 }
 
 #container {
+  margin: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,13 +23,22 @@ body {
 
   & img {
     width: 30%;
+    max-width: 144px;
+  }
+  
+  .status {
+    font-size: 2rem;
   }
 
   .userChoiceContainer {
     width: 90%;
-    max-width: 70ch;
+    max-width: 60ch;
     flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
+    
+    & img:hover {
+      border: 6px solid gray;
+    }
   }
 }
