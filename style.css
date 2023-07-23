@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'DotGothic16';
+  font-family: "DotGothic16";
   src: url(font/DotGothic16-Regular.ttf);
 }
 
@@ -10,7 +10,25 @@
 }
 
 body {
-  font-family: 'DotGothic16', sans-serif;
+  font-family: "DotGothic16", sans-serif;
   background-color: #ddd;
 }
 
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  & img {
+    width: 30%;
+  }
+
+  .userChoiceContainer {
+    width: 90%;
+    max-width: 70ch;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+  }
+}
