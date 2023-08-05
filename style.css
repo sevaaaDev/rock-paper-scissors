@@ -12,33 +12,55 @@
 body {
   font-family: "DotGothic16", sans-serif;
   background-color: #ddd;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #container {
-  margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 90%;
+  max-width: 70ch;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    '. comp .'
+    'status status status'
+    'rock paper scissors';
   gap: 2rem;
 
   & img {
-    width: 30%;
-    max-width: 144px;
-  }
-  
-  .status {
-    font-size: 2rem;
+    width: 100%;
   }
 
-  .userChoiceContainer {
-    width: 90%;
-    max-width: 60ch;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: space-between;
-    
-    & img:hover {
-      border: 6px solid gray;
+  .status {
+    font-size: 2rem;
+    grid-area: status;
+    margin: auto;
+  }
+
+  .compChoice {
+    grid-area: comp;
+  }
+
+  .Rock {
+    grid-area: rock;
+    &:hover {
+      border: 5px solid gray;
+    }
+  }
+
+  .Paper {
+    grid-area: paper;
+    &:hover {
+      border: 5px solid gray;
+    }
+  }
+
+  .Scissors {
+    grid-area: scissors;
+    &:hover {
+      border: 5px solid gray;
     }
   }
 }
