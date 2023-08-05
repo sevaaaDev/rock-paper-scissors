@@ -57,9 +57,9 @@ function playGame() {
     if (result === "win") {
       statusText.textContent = "You Win";
     } else if (result === "lose") {
-      statusText.textContent = "You Lose";
+      statusText.textContent = "Haha Lmao You LOse";
     } else if (result === "draw") {
-      statusText.textContent = "Draw";
+      statusText.textContent = "Tie";
     }
   }
   let gameChoice = ["Rock", "Paper", "Scissors", "Paper", "Scissors", "Rock"];
