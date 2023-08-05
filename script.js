@@ -1,85 +1,66 @@
 playGame();
 
 function playGame() {
-  let userScore = 0;
-  let computerScore = 0;
-  let result;
-  const userBoard = document.querySelector(".userScore");
-  const compBoard = document.querySelector(".compScore");
   const selector = document.querySelectorAll("img");
-  
+
   for (let i = 0; i < selector.length; i++) {
-    selector[i].addEventListener('click', () => {
-      userChoice = selector[i].className
-      playRound()
-    })
+    selector[i].addEventListener("click", () => {
+      if (selector[i].className !== "compChoice") {
+        let userChoice = selector[i].className;
+        let computerChoice = getComputerChoice();
+        changeCompImg(computerChoice);
+        playRound(userChoice, computerChoice);
+      }
+    });
   }
 
-  function showInfo() {
-    if (result == "lose") {
-      userBoard.textContent = userScore;
-      compBoard.textContent = computerScore;
-    } else if (result == "win") {
-      userBoard.textContent = userScore;
-      compBoard.textContent = computerScore;
-    } else if (result == "draw") {
-      userBoard.textContent = userScore;
-      compBoard.textContent = computerScore;
-    }
-  }
-
-  function playRound() {
+  function playRound(userChoice, computerChoice) {
     if (
       (userChoice === "Rock" && computerChoice === "Paper") ||
       (userChoice === "Scissors" && computerChoice === "Rock") ||
       (userChoice === "Paper" && computerChoice === "Scissors")
     ) {
-      computerScore++;
-      result = "lose";
-      showInfo();
-      checkResult();
-      computerChoice = getComputerChoice();
-    } else if (
+      let result = "lose";
+      getStatus(result);
+      return;
+    }
+    if (
       (userChoice === "Scissors" && computerChoice === "Paper") ||
       (userChoice === "Rock" && computerChoice === "Scissors") ||
       (userChoice === "Paper" && computerChoice === "Rock")
     ) {
-      userScore++;
-      result = "win";
-      showInfo();
-      checkResult();
-      computerChoice = getComputerChoice();
-    } else {
-      result = "draw";
-      showInfo();
-      checkResult();
-      computerChoice = getComputerChoice();
+      let result = "win";
+      getStatus(result);
+      return;
     }
+    let result = "draw";
+    getStatus(result);
   }
   function getComputerChoice() {
     let choice = Math.floor(Math.random() * 2.4);
     return gameChoice[choice];
   }
 
-  function checkResult() {
-    if (userScore == 5 || computerScore == 5) {
-      for (let i = 0; i < selector.length; i++) {
-        selector[i].style.display = "none";
-      }
-      const message = document.createElement("div");
-      container.append(message);
-      message.style.textAlign = 'center'
-      message.style.fontSize = '3rem'
-      message.style.gridRow = '4/6'
-      message.style.gridColumn = '3/5'
-      if (userScore < computerScore) {
-        message.innerText = "You lose";
-      } else {
-        message.innerText = "You win";
-      }
+  function changeCompImg(choice) {
+    const compImg = document.querySelector(".compChoice");
+    if (choice === "Paper") {
+      compImg.setAttribute("src", "img/Paper.png");
+    } else if (choice === "Scissors") {
+      compImg.setAttribute("src", "img/Scissors.png");
+    } else if (choice === "Rock") {
+      compImg.setAttribute("src", "img/Rock.png");
+    }
+  }
+
+  function getStatus(result) {
+    const statusText = document.querySelector(".status");
+    if (result === "win") {
+      statusText.textContent = "You Win";
+    } else if (result === "lose") {
+      statusText.textContent = "You Lose";
+    } else if (result === "draw") {
+      statusText.textContent = "Draw";
     }
   }
   let gameChoice = ["Rock", "Paper", "Scissors"];
-  let computerChoice = getComputerChoice();
-  let userChoice;
 }
