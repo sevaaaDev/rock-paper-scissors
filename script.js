@@ -62,5 +62,5 @@ function playGame() {
       statusText.textContent = "Draw";
     }
   }
-  let gameChoice = ["Rock", "Paper", "Scissors"];
+  let gameChoice = ["Rock", "Paper", "Scissors", "Paper", "Scissors", "Rock"];
 }
