@@ -37,7 +37,7 @@ function playGame() {
     getStatus(result);
   }
   function getComputerChoice() {
-    let choice = Math.floor(Math.random() * 2.4);
+    let choice = Math.floor(Math.random() * 5.4);
     return gameChoice[choice];
   }
 
